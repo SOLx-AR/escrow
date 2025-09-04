@@ -22,12 +22,12 @@ pub mod escrow {
 
     // otro usuario acepta el escrow y deposita la cantidad y moneda requerida
     // el usuario que crea el escrow recibe la cantidad y moneda que definio
-   /* pub fn take(ctx: Context<Take>) -> Result<()> {
-        msg!("Greetings from: {:?}", ctx.program_id);
+    pub fn take(ctx: Context<Take>) -> Result<()> {
+
         Ok(())
     }
 
-
+   /* 
     // el usuario creado cancela el escrow
     pub fn refund(ctx: Context<Refund>) -> Result<()> {
         msg!("Greetings from: {:?}", ctx.program_id);
