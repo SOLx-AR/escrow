@@ -55,7 +55,7 @@ pub struct Take<'info> {
     )]
     pub maker_ata_b: InterfaceAccount<'info, TokenAccount>,
     pub associated_token_program: Program<'info, AssociatedToken>,
-    pub token_program: Program<'info, TokenInterface>,
+    pub token_program: Interface<'info, TokenInterface>,
     pub system_program: Program<'info, System>,
 }
 
