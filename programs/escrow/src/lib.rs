@@ -30,5 +30,10 @@ pub mod escrow {
     pub fn refund(ctx: Context<Refund>) -> Result<()> {
         ctx.accounts.refund_and_close_vault()
     }
-    
+
+    // 1 investigar:
+    // require!
+    // require_eq!
+    // 2 agregar la condicion de que la fecha actual sea mayor a una previamente establecida
+    // 3 agregar la condicion de que el taker sea una pubkey especifica
 }
