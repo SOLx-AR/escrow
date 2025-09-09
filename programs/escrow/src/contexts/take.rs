@@ -1,7 +1,7 @@
 use anchor_lang::prelude::*;
 
 use anchor_spl::{
-    associated_token::AssociatedToken, token::{close_account, CloseAccount}, token_2022::spl_token_2022::solana_zk_token_sdk::instruction::transfer, token_interface::{transfer_checked, Mint, TokenAccount, TokenInterface, TransferChecked}
+    associated_token::AssociatedToken, token::{close_account, CloseAccount}, token_interface::{transfer_checked, Mint, TokenAccount, TokenInterface, TransferChecked}
 };
 
 use crate::Escrow;

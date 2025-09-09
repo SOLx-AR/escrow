@@ -15,7 +15,7 @@ pub mod escrow {
     // un usuario crea un escrow depositando una cierta cantidad de una criptomoneda
     // y define que moneda y cantidad quiere recivir a cambio
     pub fn make(ctx: Context<Make>, seed: u64, deposit: u64, receive:u64) -> Result<()> {
-        ctx.accounts.deposit(deposit);
+        let _ =ctx.accounts.deposit(deposit);
         ctx.accounts.save_escrow(seed, receive, &ctx.bumps)
     }
 
