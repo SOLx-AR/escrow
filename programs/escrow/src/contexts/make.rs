@@ -1,4 +1,4 @@
-use anchor_lang::prelude::*;
+use anchor_lang::{prelude::*, solana_program::sysvar::clock};
 
 use anchor_spl::{
     associated_token::AssociatedToken,
@@ -43,6 +43,8 @@ pub struct Make<'info> {
         associated_token::token_program = token_program,
     )]
     pub vault: InterfaceAccount<'info, TokenAccount>,
+    #[account(address = clock::ID)]
+    pub clock: Sysvar<'info, Clock>,
     pub associated_token_program: Program<'info, AssociatedToken>,
     pub token_program: Interface<'info, TokenInterface>,
     pub system_program: Program<'info, System>,
@@ -55,6 +57,7 @@ impl<'info> Make<'info> {
             maker: self.maker.key(),
             mint_a: self.mint_a.key(),
             mint_b: self.mint_b.key(),
+            clock: Clock::get()?.unix_timestamp,
             receive,
             bump: bumps.escrow,
         });
