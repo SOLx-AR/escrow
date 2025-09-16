@@ -8,8 +8,10 @@ use crate::Escrow;
 
 #[derive(Accounts)]
 pub struct Take<'info> {
-    #[account(mut)]
-    pub taker: Signer<'info>,
+    #[account(mut/*, address = Pubkey::from_str("FhtdXoLhYtG7v5rX6d8c1b3H9g5Jz7y8x9y6z2w3v4u").unwrap() para poner una pubkey especifica */)]
+    pub taker: Signer<'info>, 
+    // para poner una pubkey especifica
+    
     #[account(mut)]
     pub maker: SystemAccount<'info>,
     #[account(
